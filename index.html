@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shortest Path Algorithms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Shortest Path Algorithms</h1>
+        <button class="btn btn-success" id="play">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Play
+        </button>
+      </header>
+      <div class="container">
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">
+              Dijkstra's Algorithm
+            </div>
+            <div class="card-body">
+              <canvas id="dijkstra" class="canvas"></canvas>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              A* Algorithm
+            </div>
+            <div class="card-body">
+              <canvas id="aStar" class="canvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
