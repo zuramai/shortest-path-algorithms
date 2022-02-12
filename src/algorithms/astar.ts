@@ -21,8 +21,12 @@ export default class Astar implements AlgorithmInterface {
                     // this.openSet.sort((a,b) => a.gCost - b.gCost)
                     this.openSet.sort((a,b) => this.fscore(a, targetBlock) - this.fscore(b, targetBlock))
                     let currentBlock = this.openSet.shift()
-                    console.log(currentBlock)
                     this.closedSet.push(currentBlock)
+
+
+                    if(![startBlock, targetBlock].includes(currentBlock)) {
+                        currentBlock.status = BlockStatus.CHECKING
+                    }
         
                     if (currentBlock == targetBlock) {
                         while(currentBlock != startBlock) {
@@ -46,9 +50,6 @@ export default class Astar implements AlgorithmInterface {
                             
                             if(!this.openSet.includes(neighbor)) {
                                 
-                                if(![startBlock, targetBlock].includes(currentBlock)) {
-                                    currentBlock.status = BlockStatus.CHECKING
-                                }
                                 this.openSet.push(neighbor)
                             }
                         }

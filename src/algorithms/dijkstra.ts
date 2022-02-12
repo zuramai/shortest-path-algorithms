@@ -19,11 +19,17 @@ export default class Astar implements AlgorithmInterface {
             setTimeout(() => {
                 if(this.openSet.length > 0) {
                     this.openSet.sort((a,b) => a.gCost - b.gCost)
-                    // this.openSet.sort((a,b) => this.fscore(a, targetBlock) - this.fscore(b, targetBlock))
+                    
                     let currentBlock = this.openSet.shift()
                     console.log(currentBlock)
                     this.closedSet.push(currentBlock)
-        
+
+                    // Draw the progress
+                    if(![startBlock, targetBlock].includes(currentBlock)) {
+                        currentBlock.status = BlockStatus.CHECKING
+                    }
+
+                    // Stop if the path is found
                     if (currentBlock == targetBlock) {
                         while(currentBlock != startBlock) {
                             this.path.push(currentBlock)
@@ -33,7 +39,7 @@ export default class Astar implements AlgorithmInterface {
                         return this.finish()
                        
                     }
-        
+                    
                     for(let i = 0; i < currentBlock.neighbors.length; i++) {
                         let neighbor = currentBlock.neighbors[i]
                         if(neighbor.status == BlockStatus.WALL || this.closedSet.includes(neighbor)) 
@@ -45,10 +51,6 @@ export default class Astar implements AlgorithmInterface {
                             neighbor.parent = currentBlock
                             
                             if(!this.openSet.includes(neighbor)) {
-                                
-                                if(![startBlock, targetBlock].includes(currentBlock)) {
-                                    currentBlock.status = BlockStatus.CHECKING
-                                }
                                 this.openSet.push(neighbor)
                             }
                         }
