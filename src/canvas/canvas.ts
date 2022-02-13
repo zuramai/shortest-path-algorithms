@@ -18,12 +18,8 @@ export default class Canvas implements CanvasInterface {
         this.algorithm = algorithm
         this.canvas = typeof el == 'string' ? document.querySelector<HTMLCanvasElement>(el) : el
         this.ctx = this.canvas.getContext('2d')
-        this.size = {x: config.size.x, y: config.size.y}
         this.blocks = []
         this.config = config
-        this.from = {x: config.from.x-1, y: config.from.y-1}
-        this.to = {x: config.to.x-1, y: config.to.y-1}
-        this.walls = config.walls
 
         this.init()
     }
@@ -46,6 +42,11 @@ export default class Canvas implements CanvasInterface {
     }
 
     generateBlocks() {
+        this.size = {x: this.config.size.x, y: this.config.size.y}
+        this.from = {x: this.config.from.x-1, y: this.config.from.y-1}
+        this.to = {x: this.config.to.x-1, y: this.config.to.y-1}
+        this.walls = this.config.walls
+
         let blocks: Block[][] = []
         let blockWidth = this.canvas.width / this.size.x
         let blockHeight = this.canvas.height / this.size.y
@@ -131,5 +132,10 @@ export default class Canvas implements CanvasInterface {
 
     solve() {
         this.algorithm.solve(this.blocks, this.from, this.to, this.config.speed)
+    }
+
+    reset() {
+        console.log('reset')
+        this.generateBlocks()
     }
 }

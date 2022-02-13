@@ -1,6 +1,7 @@
 import { Block } from "../canvas/block";
 import { AlgorithmInterface } from "./algorithm";
 
+
 export interface Coordinate {
     x: number
     y: number

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shortest Path Algorithms</title>
+    <title>Shortest Path Algorithms Visualization</title>
+    <meta name="description" content="Pathfinding algorithm (Dijkstra, A*) made with Javascript">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     <div id="app">
       <header>
         <h1>Shortest Path Algorithms</h1>
-        <button class="btn btn-success" id="play">
+        <button class="btn btn-success btn-xl" id="play">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
           Play
         </button>
@@ -38,9 +39,88 @@
           </div>
         </div>
       </div>
+      <div class="config">
+        <div class="config-body">
+          <h2 class="config-title">Config</h2>
+
+          <form>
+            <div class="form-group">
+              <h4 for="size-x">Size</h4>
+              <div class="flex gap-2">
+                <div class="w-1/2">
+                  <label for="size-x">x</label>
+                  <input type="text" id="size-x" value="20" min="5" max="30">
+                </div>
+                <div class="w-1/2">
+                  <label for="size-y">y</label>
+                  <input type="text" id="size-y" value="20" min="5" max="30">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <h4 for="start-x">Start position</h4>
+              <div class="flex gap-2">
+                <div class="w-1/2">
+                  <label for="start-x">x</label>
+                  <input type="text" id="start-x" value="5">
+                </div>
+                <div class="w-1/2">
+                  <label for="start-y">y</label>
+                  <input type="text" id="start-y" value="5">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <h4 for="end-x">End position</h4>
+              <div class="flex gap-2">
+                <div class="w-1/2">
+                  <label for="end-x">x</label>
+                  <input type="text" id="end-x" value="18">
+                </div>
+                <div class="w-1/2">
+                  <label for="end-y">y</label>
+                  <input type="text" id="end-y" value="18">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <h4 for="speed">Animation Speed</h4>
+              <input type="text" id="speed" value="30">
+            </div>
+            <div class="form-group">
+              <h4 for="walls">Walls</h4>
+              <textarea name="walls" id="walls" rows="5">
+10,10
+10,11
+10,12
+10,13
+10,14
+10,15
+11,10
+12,10
+13,10
+14,10
+15,10
+              </textarea>
+              <small>Separated by enter</small>
+            </div>
+
+            <div class="right">
+              <button class="btn btn-primary btn-sm" id="save-config">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="config-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+          </svg>
+        </div>
+      </div>
     </div>
     <footer>
-      <p>Made by <a href="https://ahmadsaugi.com">Ahmad Saugi</a></p>
+      <p>Made by <a target="_blank" href="https://ahmadsaugi.com">Ahmad Saugi</a>
+        Fork on <a href="https://github.com/zuramai/shortest-path-algorithms"> GitHub</a>
+      </p>
     </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
