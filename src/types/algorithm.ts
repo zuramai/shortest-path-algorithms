@@ -1,5 +1,5 @@
 import { Block } from "../canvas/block";
-import { BlockInterface, Coordinate } from "./canvas"
+import {  Coordinate } from "./canvas"
 
 export interface AlgorithmInterface {
     startPosition: Coordinate

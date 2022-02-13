@@ -1,5 +1,5 @@
 import { AlgorithmInterface } from "../types/algorithm";
-import { BlockInterface, BlockStatus, CanvasConfig, CanvasInterface, Coordinate } from "../types/canvas";
+import { BlockStatus, CanvasConfig, CanvasInterface, Coordinate } from "../types/canvas";
 import { Block } from "./block"
 
 
@@ -31,14 +31,14 @@ export default class Canvas implements CanvasInterface {
 
         this.generateBlocks()
 
-        this.render(0)
+        this.render()
     }
 
-    render(timestamp: number) {
+    render() {
         this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height)
         this.draw()
         this.update()
-        setTimeout(() => requestAnimationFrame(t => this.render(t)), 100)
+        setTimeout(() => requestAnimationFrame(() => this.render()), 100)
     }
 
     generateBlocks() {

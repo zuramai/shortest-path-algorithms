@@ -1,4 +1,3 @@
-import { Block } from "../canvas/block";
 import { AlgorithmInterface } from "./algorithm";
 
 
