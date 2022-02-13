@@ -8,7 +8,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.21",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
