@@ -83,10 +83,15 @@ const toggleConfig = () => {
 }
 
 let btnPlay = document.getElementById("play")
+let btnReset = document.querySelector(".btn-reset")
 let btnConfigToggle = document.getElementById("config-toggle")
 let btnConfigSave = document.getElementById("save-config")
 
 btnConfigToggle.addEventListener('click', () => toggleConfig())
 btnPlay.addEventListener("click", () => play())
+btnReset.addEventListener("click", () => {
+    aStar.reset()
+    dijkstra.reset()
+})
 btnConfigSave.addEventListener('click', saveConfig)
 
