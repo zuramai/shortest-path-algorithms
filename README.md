@@ -1,7 +1,7 @@
 # Shortest Path Algorithms
 Pathfinding algorithms (Greedy, A*) made with Typescript
 
-[Click here for demo]()
+[Click here for demo](https://shortest-paths.netlify.app)
 ![demo.gif](demo.gif)
 
 ## Run locally
