@@ -135,7 +135,6 @@ export default class Canvas implements CanvasInterface {
     }
 
     reset() {
-        console.log('reset')
         this.generateBlocks()
     }
 }

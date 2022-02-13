@@ -8,7 +8,7 @@ let config = {
     speed: 30,
     size: { x: 20, y: 20 },
     from: { x: 5, y: 5 },
-    to: { x: 18, y: 18 },
+    to: { x: 14, y: 16 },
     walls: [
         { x: 10, y: 10 },
         { x: 10, y: 11 },
@@ -77,11 +77,16 @@ const play = () => {
     aStar.solve()
 }
 
-
+const toggleConfig = () => {
+    let configEl = document.querySelector<HTMLElement>('.config')
+    configEl.classList.toggle("show")
+}
 
 let btnPlay = document.getElementById("play")
+let btnConfigToggle = document.getElementById("config-toggle")
 let btnConfigSave = document.getElementById("save-config")
 
+btnConfigToggle.addEventListener('click', () => toggleConfig())
 btnPlay.addEventListener("click", () => play())
 btnConfigSave.addEventListener('click', saveConfig)
 

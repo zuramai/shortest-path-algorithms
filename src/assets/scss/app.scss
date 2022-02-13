@@ -23,6 +23,7 @@ header {
 .container {
     width: clamp(350px,80vw, 1200px);
     margin: 0 auto;
+    padding: 1rem;
 }
 
 
@@ -85,9 +86,15 @@ $card-border-color: rgb(90, 90, 90);
     &.btn-primary {
         background-color: rgba(68, 144, 189, 0.87);
         color: white;
+
         &:hover {
             background-color: rgb(43, 141, 197);
         }
+        
+        &:active {
+            background-color: rgb(36, 92, 124);
+        }
+
     }
     
     &.btn-success {
@@ -104,22 +111,36 @@ $card-border-color: rgb(90, 90, 90);
 
 .config {
     position: absolute;
-    top: 230px;
+    top: 150px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin-left: -300px;
+    transition: all .2s;
+
+    &.show {
+        margin-left: 0;
+    }
+
     .config-body {
         width: 300px;
-        background-color: rgba(40,40,40,.9);
+        background-color: rgba(40,40,40,.95);
         backdrop-filter: blur(5px);
         padding: 1rem;
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
     }
     .config-toggle {
         background-color: rgba(68, 144, 189, 0.87);
         padding: .6rem;
+        margin-top: 2rem;
         cursor: pointer;
         border-top-right-radius: .8rem;
         border-bottom-right-radius: .8rem;
+
+        &:active {
+            background-color: rgb(36, 92, 124);
+        }
     }
 }
 
